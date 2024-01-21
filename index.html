@@ -8,6 +8,23 @@
     <title>Library</title>
 </head>
 <body>
-    
+    <div id="mainContainer">
+        <div id="bookDisplay">
+            <div id="title">Book: <span id="actualTitle"></span></div>
+            <div id="author">by <span id="actualAuthor"></span></div>
+            <div id="pages">with <span id="numberPages"></span> pages.</div>
+            <div id="read"></div>
+        </div>
+        <div id="interactableButtons">
+            <dialog>
+                <p>Opened</p>
+                <button id="closeForm">Close!</button>
+            </dialog>
+            <button id="openForm">Open!</button>
+            <select name="simple" id="books">
+                <option id="default" value="default">None</option>
+            </select>
+        </div>
+    </div>
 </body>
 </html>
