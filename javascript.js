@@ -49,6 +49,12 @@ function displayBook(book)
     title.textContent = book.title;
     author.textContent = book.author;
     pages.textContent = book.pages;
+    if(book.title === "")
+    {
+        read.textContent = "";
+        return;
+    }
+        
     if(book.read)
         read.textContent = "Already read."
     else
@@ -69,6 +75,12 @@ const openForm = document.getElementById('openForm');
 const closeForm = document.getElementById('closeForm');
 const dialog = document.querySelector("dialog");
 
+const noDisplay = document.getElementById('default');
+const empty = new Book("","","");
+
+noDisplay.addEventListener('click',()=>{
+    displayBook(empty);
+})
 
 openForm.addEventListener('click',()=>{
     dialog.showModal();
