@@ -1,1 +1,1 @@
-# Library
+First project of the Javascript course on TOP. A simple program that lets you load books on a "library" change their read status and display them in a rudimentary webpage.
