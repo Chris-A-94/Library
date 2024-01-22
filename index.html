@@ -16,15 +16,38 @@
             <div id="read"></div>
         </div>
         <div id="interactableButtons">
-            <dialog>
-                <p>Opened</p>
-                <button id="closeForm">Close!</button>
-            </dialog>
+        
             <button id="openForm">Open!</button>
             <select name="simple" id="books">
                 <option id="default" value="default">None</option>
             </select>
-        </div>
+        </div>        
     </div>
+    
+    <dialog>
+        <form action="get">
+            <label for="enterTitle">Title: </label>
+            <input type="text" id="enterTitle">
+            <label for="enterAuthor">Author: </label>
+            <input type="text" id="enterAuthor">
+            <label for="enterPages">Pages: </label>
+            <input type="number" id="enterPages">
+            <fieldset>
+                <legend id="pickedRead">Have you read it?</legend>
+                <div class="options">
+                    <input type="radio" id="Yes" name="read" value="true">
+                    <label for="Yes">Yes</label>
+                </div>
+                <div class="options">
+                    <input type="radio" id="No" name="read" value="false" checked>
+                    <label for="No">No</label>
+                </div>
+            </fieldset>
+            <input type="submit" value="Add Book" id="addingBook">
+            <button id="closeForm">Cancel</button>
+        </form>
+        
+    </dialog>
+    
 </body>
 </html>

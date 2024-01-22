@@ -74,6 +74,7 @@ addBookToSelector(myLibrary[0]);
 const openForm = document.getElementById('openForm');
 const closeForm = document.getElementById('closeForm');
 const dialog = document.querySelector("dialog");
+const bookAdder = document.getElementById('addingBook');
 
 const noDisplay = document.getElementById('default');
 const empty = new Book("","","");
@@ -82,9 +83,27 @@ noDisplay.addEventListener('click',()=>{
     displayBook(empty);
 })
 
+const inputTitle = document.getElementById('enterTitle');
+const inputAuthor = document.getElementById('enterAuthor');
+const inputPages = document.getElementById('enterPages');
+let inputRead = document.querySelector('input[name="read"]:checked').value;
+
 openForm.addEventListener('click',()=>{
     dialog.showModal();
+    inputTitle.value = "";
+    inputAuthor.value = "";
+    inputPages.value = "";
 })
 closeForm.addEventListener('click',()=>{
+    event.preventDefault();
+    dialog.close();
+})
+
+bookAdder.addEventListener('click',()=>{
+    event.preventDefault(); 
+
+    const newBook = new Book(inputTitle.value,inputAuthor.value,inputPages.value,inputRead);
+    newBook.addBookToArray(newBook);
+    addBookToSelector(newBook);
     dialog.close();
 })

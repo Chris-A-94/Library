@@ -19,3 +19,12 @@ body{
 #bookDisplay{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
+
+dialog[open]{
+    margin:0;
+    position: absolute;
+    top: 10cm;
+    left: 14cm;
+}
+
+
