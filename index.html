@@ -17,7 +17,7 @@
         </div>
         <div id="interactableButtons">
         
-            <button id="openForm">Open!</button>
+            <button id="openForm">Add Book</button>
             <select name="simple" id="books">
                 <option id="default" value="default">None</option>
             </select>
@@ -27,11 +27,11 @@
     <dialog>
         <form action="get">
             <label for="enterTitle">Title: </label>
-            <input type="text" id="enterTitle">
+            <input type="text" id="enterTitle" required>
             <label for="enterAuthor">Author: </label>
-            <input type="text" id="enterAuthor">
+            <input type="text" id="enterAuthor" required>
             <label for="enterPages">Pages: </label>
-            <input type="number" id="enterPages">
+            <input type="number" id="enterPages" required>
             <fieldset>
                 <legend id="pickedRead">Have you read it?</legend>
                 <div class="options">

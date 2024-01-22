@@ -100,7 +100,12 @@ closeForm.addEventListener('click',()=>{
 })
 
 bookAdder.addEventListener('click',()=>{
-    event.preventDefault(); 
+    event.preventDefault();
+    if(inputTitle.value === "" || inputAuthor.value === "" || inputPages.value === "")
+    {
+        alert("All values are required.")
+        return;
+    }
 
     const newBook = new Book(inputTitle.value,inputAuthor.value,inputPages.value,inputRead);
     newBook.addBookToArray(newBook);
