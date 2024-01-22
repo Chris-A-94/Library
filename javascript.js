@@ -75,6 +75,7 @@ const openForm = document.getElementById('openForm');
 const closeForm = document.getElementById('closeForm');
 const dialog = document.querySelector("dialog");
 const bookAdder = document.getElementById('addingBook');
+const showAllBooks = document.getElementById('iteration');
 
 const noDisplay = document.getElementById('default');
 const empty = new Book("","","");
@@ -111,4 +112,20 @@ bookAdder.addEventListener('click',()=>{
     newBook.addBookToArray(newBook);
     addBookToSelector(newBook);
     dialog.close();
+})
+
+showAllBooks.addEventListener('click',()=>{
+   
+    let i = 0;
+    function loop(){
+        displayBook(myLibrary[i]);
+        i++;
+        if(i < myLibrary.length)
+        {
+        setTimeout(()=>{            
+            loop();
+        },500);
+         }
+    }
+    loop();
 })
