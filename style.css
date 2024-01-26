@@ -27,5 +27,11 @@ dialog[open]{
     left: 14cm;
 }
 
-
+#eliminate{
+    max-width: auto;
+    max-height: fit-content;
+    font-size: x-small;
+    color:white;
+    background-color: red;
+}
 
