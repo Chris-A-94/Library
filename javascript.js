@@ -49,6 +49,7 @@ function displayBook(book)
     const author = document.getElementById('actualAuthor');
     const pages = document.getElementById('numberPages');
     const read = document.getElementById('read');
+    const checkMark = document.getElementById('checkRead');
 
 
     title.textContent = book.title;
@@ -61,14 +62,22 @@ function displayBook(book)
     }
         
     if(book.read)
+    {
         read.textContent = "Already read."
+        checkMark.checked = true;
+    }
+        
     else
+    {
         read.textContent = "Not read yet."
+        checkMark.checked = false;
+    }
+        
 }
 
 
-const songOfHope = new Book("Song of Hope", "Christian Almeida", 300,true);
-const dividedLands = new Book("Divided Lands", "Christian & Ivan", 250,false);
+const songOfHope = new Book("A Game of Thrones", "George RR Martin", 694,true);
+const dividedLands = new Book("Fellowship of the Ring", "JRR Tolkien", 432,false);
 
 songOfHope.addBookToArray(songOfHope);
 dividedLands.addBookToArray(dividedLands);
@@ -84,6 +93,7 @@ const showAllBooks = document.getElementById('iteration');
 const bookDeleter = document.getElementById('eliminate');
 bookDeleter.style.backgroundColor = "grey";
 const selector = document.getElementById('books');
+const checkMark = document.getElementById('checkRead');
 
 const noDisplay = document.getElementById('default');
 const empty = new Book("","","");
@@ -92,12 +102,40 @@ noDisplay.addEventListener('click',()=>{
     displayBook(empty);
 })
 
-selector.addEventListener('click',()=>{
+checkMark.addEventListener('click',()=>{
     const title = document.getElementById('actualTitle');
+    const read = document.getElementById('read');
+    let j;
+    for(let i = 0; i < myLibrary.length; i++)
+    {
+        if(myLibrary[i].title === title.textContent)
+            j = i;
+    }
+    if(j === undefined)
+        return;
+    if(checkMark.checked)
+    {
+        myLibrary[j].read = true;
+        read.textContent = "Already read."
+    }
+    else
+    {
+        myLibrary[j].read = false;
+        read.textContent = "Not read yet."
+    }
+})
+
+selector.addEventListener('click',()=>{
+    const title = document.getElementById('actualTitle');    
     if(title.textContent === "")
+    {
         bookDeleter.style.backgroundColor = "grey";
+        return;
+    }        
     else
         bookDeleter.style.backgroundColor = "red";
+   
+    
 })
 
 const inputTitle = document.getElementById('enterTitle');

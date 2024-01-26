@@ -14,6 +14,7 @@ body{
     flex:0.3;
     background-color: white;
     align-self: center;
+
 }
 
 #bookDisplay{
@@ -28,10 +29,19 @@ dialog[open]{
 }
 
 #eliminate{
-    max-width: auto;
+    
     max-height: fit-content;
     font-size: x-small;
     color:white;
     background-color: red;
+    flex:0 1 auto;
 }
+
+#checkDiv{
+    display:flex;
+    justify-content: space-between;
+    margin-right: 0.1cm;
+}
+
+
 
